@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://du5eo6opgry3p"]
+
+[ext_resource type="Texture2D" uid="uid://0ly7rk3lfwva" path="res://Sprites/caja-de-entrega.png" id="1_vhnsy"]
+
+[node name="ShelvesRack" type="Sprite2D"]
+texture = ExtResource("1_vhnsy")

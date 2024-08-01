@@ -1,0 +1,676 @@
+[gd_scene load_steps=11 format=3 uid="uid://drgexlcpv55d6"]
+
+[ext_resource type="Script" path="res://Scripts/Levels/tutorial.gd" id="1_7xikj"]
+[ext_resource type="FontFile" uid="uid://cy04exvuwceek" path="res://Fonts/ArsenalSC-Regular.ttf" id="1_aunc4"]
+[ext_resource type="PackedScene" uid="uid://h8n6cdkmcqlu" path="res://Scenes/GameElements/box.tscn" id="2_sqscn"]
+[ext_resource type="Script" path="res://Scripts/LevelsMenu/TutorialButtons.gd" id="2_wg33a"]
+[ext_resource type="Texture2D" uid="uid://d0ohogrey0pnm" path="res://Sprites/facil-instalacion.png" id="3_rqflm"]
+[ext_resource type="PackedScene" uid="uid://bgxkxbpkkbafl" path="res://Scenes/GameElements/factory.tscn" id="3_ue3kv"]
+[ext_resource type="Texture2D" uid="uid://ctb1qq425rqid" path="res://Sprites/flecha.png" id="4_2bfu3"]
+[ext_resource type="PackedScene" uid="uid://cw3pmr8q5g46h" path="res://Scenes/GameElements/storehouse.tscn" id="4_6u3fw"]
+[ext_resource type="PackedScene" uid="uid://du5eo6opgry3p" path="res://Scenes/GameElements/shelves_rack.tscn" id="5_yqjhx"]
+[ext_resource type="PackedScene" uid="uid://chitg1aosygas" path="res://Scenes/GameElements/truck.tscn" id="7_sfxvd"]
+
+[node name="Tutorial" type="Node2D"]
+script = ExtResource("1_7xikj")
+
+[node name="Background" type="Node2D" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="Background"]
+offset_right = 576.0
+offset_bottom = 1024.0
+color = Color(0.951515, 0.897582, 0.949652, 1)
+
+[node name="UI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 5.0
+offset_top = -15.0
+offset_right = 5.0
+offset_bottom = -15.0
+
+[node name="Title" type="Label" parent="UI"]
+layout_mode = 0
+offset_left = -5.0
+offset_top = 15.0
+offset_right = 571.0
+offset_bottom = 103.0
+theme_override_colors/font_color = Color(0.364706, 0.286275, 0.431373, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("1_aunc4")
+theme_override_font_sizes/font_size = 70
+text = "Tutorial
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TutorialButtons" type="Control" parent="UI"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("2_wg33a")
+
+[node name="OptionsButton" type="Button" parent="UI/TutorialButtons"]
+layout_mode = 2
+offset_left = 508.0
+offset_top = 35.0
+offset_right = 558.0
+offset_bottom = 85.0
+theme_override_colors/font_color = Color(0.344359, 0.263388, 0.413618, 1)
+theme_override_fonts/font = ExtResource("1_aunc4")
+theme_override_font_sizes/font_size = 60
+icon = ExtResource("3_rqflm")
+flat = true
+expand_icon = true
+
+[node name="BackButton" type="Button" parent="UI/TutorialButtons"]
+layout_mode = 2
+offset_left = 10.0
+offset_top = 35.0
+offset_right = 60.0
+offset_bottom = 85.0
+theme_override_colors/font_color = Color(0.344359, 0.263388, 0.413618, 1)
+theme_override_fonts/font = ExtResource("1_aunc4")
+theme_override_font_sizes/font_size = 60
+icon = ExtResource("4_2bfu3")
+flat = true
+expand_icon = true
+
+[node name="GameElements" type="Node2D" parent="."]
+position = Vector2(5, -15)
+
+[node name="GameLabels" type="Control" parent="GameElements"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="LabelObjectiveKey" type="Label" parent="GameElements/GameLabels"]
+layout_mode = 0
+offset_left = 14.0
+offset_top = 223.0
+offset_right = 130.0
+offset_bottom = 261.0
+theme_override_colors/font_color = Color(0.364706, 0.286275, 0.431373, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("1_aunc4")
+theme_override_font_sizes/font_size = 30
+text = "Paradas
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LabelObjectiveValue" type="Label" parent="GameElements/GameLabels"]
+layout_mode = 0
+offset_left = 14.0
+offset_top = 267.0
+offset_right = 130.0
+offset_bottom = 305.0
+theme_override_colors/font_color = Color(0.364706, 0.286275, 0.431373, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("1_aunc4")
+theme_override_font_sizes/font_size = 30
+text = "4
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Storage_1" type="Control" parent="GameElements/GameLabels"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ColorRectStore1" type="ColorRect" parent="GameElements/GameLabels/Storage_1"]
+layout_mode = 0
+offset_left = 152.0
+offset_top = 262.0
+offset_right = 268.0
+offset_bottom = 862.0
+color = Color(0.504457, 0.93934, 0.656398, 1)
+
+[node name="LabelStore_1" type="Label" parent="GameElements/GameLabels/Storage_1"]
+layout_mode = 0
+offset_left = 148.0
+offset_top = 186.0
+offset_right = 274.0
+offset_bottom = 224.0
+theme_override_colors/font_color = Color(0.345459, 0.766225, 0.503299, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("1_aunc4")
+theme_override_font_sizes/font_size = 30
+text = "Depósito 1
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LabelCapacity_1" type="Label" parent="GameElements/GameLabels/Storage_1"]
+layout_mode = 0
+offset_left = 148.0
+offset_top = 225.0
+offset_right = 274.0
+offset_bottom = 263.0
+theme_override_colors/font_color = Color(0.345459, 0.766225, 0.503299, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("1_aunc4")
+theme_override_font_sizes/font_size = 30
+text = "(0/30)
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Storage_2" type="Control" parent="GameElements/GameLabels"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ColorRectStore2" type="ColorRect" parent="GameElements/GameLabels/Storage_2"]
+layout_mode = 0
+offset_left = 294.0
+offset_top = 262.0
+offset_right = 410.0
+offset_bottom = 862.0
+color = Color(0.940428, 0.610379, 0.651128, 1)
+
+[node name="LabelStore_2" type="Label" parent="GameElements/GameLabels/Storage_2"]
+layout_mode = 0
+offset_left = 289.0
+offset_top = 185.0
+offset_right = 418.0
+offset_bottom = 223.0
+theme_override_colors/font_color = Color(0.941176, 0.611765, 0.65098, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("1_aunc4")
+theme_override_font_sizes/font_size = 30
+text = "Depósito 2
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LabelCapacity_2" type="Label" parent="GameElements/GameLabels/Storage_2"]
+layout_mode = 0
+offset_left = 289.0
+offset_top = 224.0
+offset_right = 418.0
+offset_bottom = 262.0
+theme_override_colors/font_color = Color(0.941176, 0.611765, 0.65098, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("1_aunc4")
+theme_override_font_sizes/font_size = 30
+text = "(0/110)
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Storage_3" type="Control" parent="GameElements/GameLabels"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ColorRectStore3" type="ColorRect" parent="GameElements/GameLabels/Storage_3"]
+layout_mode = 0
+offset_left = 436.0
+offset_top = 262.0
+offset_right = 552.0
+offset_bottom = 862.0
+color = Color(0.591123, 0.68821, 0.815869, 1)
+
+[node name="LabelStore_3" type="Label" parent="GameElements/GameLabels/Storage_3"]
+layout_mode = 0
+offset_left = 430.0
+offset_top = 185.0
+offset_right = 559.0
+offset_bottom = 223.0
+theme_override_colors/font_color = Color(0.592157, 0.686275, 0.815686, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("1_aunc4")
+theme_override_font_sizes/font_size = 30
+text = "Depósito 3
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LabelCapacity_3" type="Label" parent="GameElements/GameLabels/Storage_3"]
+layout_mode = 0
+offset_left = 430.0
+offset_top = 225.0
+offset_right = 559.0
+offset_bottom = 263.0
+theme_override_colors/font_color = Color(0.592157, 0.686275, 0.815686, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("1_aunc4")
+theme_override_font_sizes/font_size = 30
+text = "(0/80)"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Factory_A" type="Control" parent="GameElements/GameLabels"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="LabelFactory_A" type="Label" parent="GameElements/GameLabels/Factory_A"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 376.0
+offset_right = 132.0
+offset_bottom = 414.0
+theme_override_colors/font_color = Color(0.92549, 0.223529, 0.4, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("1_aunc4")
+theme_override_font_sizes/font_size = 30
+text = "Fábrica A
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LabelProduction_A" type="Label" parent="GameElements/GameLabels/Factory_A"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 414.0
+offset_right = 132.0
+offset_bottom = 452.0
+theme_override_colors/font_color = Color(0.92549, 0.223529, 0.4, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("1_aunc4")
+theme_override_font_sizes/font_size = 30
+text = "(130/130)
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LabelValue_A1" type="Label" parent="GameElements/GameLabels/Factory_A"]
+layout_mode = 0
+offset_left = 151.0
+offset_top = 415.0
+offset_right = 267.0
+offset_bottom = 453.0
+theme_override_colors/font_color = Color(0.92549, 0.223529, 0.4, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("1_aunc4")
+theme_override_font_sizes/font_size = 30
+text = "$2 x Caja
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LabelValue_A2" type="Label" parent="GameElements/GameLabels/Factory_A"]
+layout_mode = 0
+offset_left = 294.0
+offset_top = 415.0
+offset_right = 410.0
+offset_bottom = 453.0
+theme_override_colors/font_color = Color(0.92549, 0.223529, 0.4, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("1_aunc4")
+theme_override_font_sizes/font_size = 30
+text = "$5 x Caja"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LabelValue_A3" type="Label" parent="GameElements/GameLabels/Factory_A"]
+layout_mode = 0
+offset_left = 437.0
+offset_top = 415.0
+offset_right = 553.0
+offset_bottom = 453.0
+theme_override_colors/font_color = Color(0.92549, 0.223529, 0.4, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("1_aunc4")
+theme_override_font_sizes/font_size = 30
+text = "$7 x Caja"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ColorRectRouteA" type="ColorRect" parent="GameElements/GameLabels/Factory_A"]
+layout_mode = 0
+offset_left = 152.0
+offset_top = 585.0
+offset_right = 552.0
+offset_bottom = 618.0
+color = Color(0.92549, 0.223529, 0.4, 1)
+
+[node name="Line2D" type="Line2D" parent="GameElements/GameLabels/Factory_A/ColorRectRouteA"]
+position = Vector2(2.98051, 18)
+scale = Vector2(0.997567, 1)
+points = PackedVector2Array(-2.99997, -2, 398, -2)
+width = 5.0
+
+[node name="Factory_B" type="Control" parent="GameElements/GameLabels"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="LabelFactory_B" type="Label" parent="GameElements/GameLabels/Factory_B"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 622.0
+offset_right = 132.0
+offset_bottom = 660.0
+theme_override_colors/font_color = Color(0.358563, 0.525204, 0.860223, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("1_aunc4")
+theme_override_font_sizes/font_size = 30
+text = "Fábrica B
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LabelProduction_B" type="Label" parent="GameElements/GameLabels/Factory_B"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 660.0
+offset_right = 132.0
+offset_bottom = 698.0
+theme_override_colors/font_color = Color(0.358563, 0.525204, 0.860223, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("1_aunc4")
+theme_override_font_sizes/font_size = 30
+text = "(90/90)"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LabelValue_B1" type="Label" parent="GameElements/GameLabels/Factory_B"]
+layout_mode = 0
+offset_left = 153.0
+offset_top = 661.0
+offset_right = 269.0
+offset_bottom = 699.0
+theme_override_colors/font_color = Color(0.358563, 0.525204, 0.860223, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("1_aunc4")
+theme_override_font_sizes/font_size = 30
+text = "$3 x Caja"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LabelValue_B2" type="Label" parent="GameElements/GameLabels/Factory_B"]
+layout_mode = 0
+offset_left = 294.0
+offset_top = 661.0
+offset_right = 410.0
+offset_bottom = 699.0
+theme_override_colors/font_color = Color(0.358563, 0.525204, 0.860223, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("1_aunc4")
+theme_override_font_sizes/font_size = 30
+text = "$2 x Caja"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LabelValue_B3" type="Label" parent="GameElements/GameLabels/Factory_B"]
+layout_mode = 0
+offset_left = 436.0
+offset_top = 661.0
+offset_right = 552.0
+offset_bottom = 699.0
+theme_override_colors/font_color = Color(0.358563, 0.525204, 0.860223, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("1_aunc4")
+theme_override_font_sizes/font_size = 30
+text = "$8 x Caja"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ColorRectRouteB" type="ColorRect" parent="GameElements/GameLabels/Factory_B"]
+layout_mode = 0
+offset_left = 152.0
+offset_top = 829.0
+offset_right = 552.0
+offset_bottom = 862.0
+color = Color(0.392157, 0.552941, 0.866667, 1)
+
+[node name="Line2D2" type="Line2D" parent="GameElements/GameLabels/Factory_B/ColorRectRouteB"]
+position = Vector2(2.9805, 19)
+scale = Vector2(0.997567, 1)
+points = PackedVector2Array(-2.99997, -2, 398, -2)
+width = 5.0
+
+[node name="Box1" parent="GameElements" instance=ExtResource("2_sqscn")]
+position = Vector2(37, 595)
+scale = Vector2(0.109461, 0.109461)
+
+[node name="LabelContentTruck_A2" type="Label" parent="GameElements/Box1"]
+offset_left = -155.306
+offset_top = -137.035
+offset_right = 155.694
+offset_bottom = 136.965
+theme_override_colors/font_color = Color(0.92549, 0.223529, 0.4, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 50
+theme_override_fonts/font = ExtResource("1_aunc4")
+theme_override_font_sizes/font_size = 180
+text = "+10
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Box2" parent="GameElements" instance=ExtResource("2_sqscn")]
+position = Vector2(37, 840)
+scale = Vector2(0.109461, 0.109461)
+
+[node name="LabelContentTruck_A3" type="Label" parent="GameElements/Box2"]
+offset_left = -155.306
+offset_top = -127.9
+offset_right = 155.694
+offset_bottom = 146.1
+theme_override_colors/font_color = Color(0.356863, 0.52549, 0.858824, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 50
+theme_override_fonts/font = ExtResource("1_aunc4")
+theme_override_font_sizes/font_size = 180
+text = "+10
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Factory_1" parent="GameElements" instance=ExtResource("3_ue3kv")]
+position = Vector2(72.625, 510)
+scale = Vector2(0.221191, 0.221191)
+
+[node name="Factory_2" parent="GameElements" instance=ExtResource("3_ue3kv")]
+position = Vector2(72.625, 755.812)
+scale = Vector2(0.221191, 0.221191)
+
+[node name="Storehouse_A" parent="GameElements" instance=ExtResource("4_6u3fw")]
+position = Vector2(210, 324)
+scale = Vector2(0.199219, 0.199219)
+
+[node name="Storehouse_B" parent="GameElements" instance=ExtResource("4_6u3fw")]
+position = Vector2(352, 324)
+scale = Vector2(0.199219, 0.199219)
+
+[node name="Storehouse_C" parent="GameElements" instance=ExtResource("4_6u3fw")]
+position = Vector2(493, 324)
+scale = Vector2(0.199219, 0.199219)
+
+[node name="ShelvesRack_1A" parent="GameElements" instance=ExtResource("5_yqjhx")]
+position = Vector2(209, 508)
+scale = Vector2(0.177734, 0.177734)
+
+[node name="LabelBoxes_1A" type="Label" parent="GameElements/ShelvesRack_1A"]
+offset_left = -168.791
+offset_right = 181.209
+offset_bottom = 189.0
+theme_override_colors/font_color = Color(0.345459, 0.766225, 0.503299, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 50
+theme_override_fonts/font = ExtResource("1_aunc4")
+theme_override_font_sizes/font_size = 150
+text = "0
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ShelvesRack_2A" parent="GameElements" instance=ExtResource("5_yqjhx")]
+position = Vector2(209, 752)
+scale = Vector2(0.177734, 0.177734)
+
+[node name="LabelBoxes_2A" type="Label" parent="GameElements/ShelvesRack_2A"]
+offset_left = -168.791
+offset_right = 181.209
+offset_bottom = 189.0
+theme_override_colors/font_color = Color(0.345459, 0.766225, 0.503299, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 50
+theme_override_fonts/font = ExtResource("1_aunc4")
+theme_override_font_sizes/font_size = 150
+text = "0
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ShelvesRack_1B" parent="GameElements" instance=ExtResource("5_yqjhx")]
+position = Vector2(354.5, 508)
+scale = Vector2(0.177734, 0.177734)
+
+[node name="LabelBoxes_1B" type="Label" parent="GameElements/ShelvesRack_1B"]
+offset_left = -165.978
+offset_right = 184.022
+offset_bottom = 189.0
+theme_override_colors/font_color = Color(0.941176, 0.611765, 0.65098, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 50
+theme_override_fonts/font = ExtResource("1_aunc4")
+theme_override_font_sizes/font_size = 150
+text = "0
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ShelvesRack_2B" parent="GameElements" instance=ExtResource("5_yqjhx")]
+position = Vector2(354.5, 752)
+scale = Vector2(0.177734, 0.177734)
+
+[node name="LabelBoxes_2B" type="Label" parent="GameElements/ShelvesRack_2B"]
+offset_left = -165.978
+offset_right = 184.022
+offset_bottom = 189.0
+theme_override_colors/font_color = Color(0.941176, 0.611765, 0.65098, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 50
+theme_override_fonts/font = ExtResource("1_aunc4")
+theme_override_font_sizes/font_size = 150
+text = "0
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ShelvesRack_1C" parent="GameElements" instance=ExtResource("5_yqjhx")]
+position = Vector2(494.5, 508)
+scale = Vector2(0.177734, 0.177734)
+
+[node name="LabelBoxes_1C" type="Label" parent="GameElements/ShelvesRack_1C"]
+offset_left = -165.978
+offset_right = 184.022
+offset_bottom = 189.0
+theme_override_colors/font_color = Color(0.592157, 0.686275, 0.815686, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 50
+theme_override_fonts/font = ExtResource("1_aunc4")
+theme_override_font_sizes/font_size = 150
+text = "0
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ShelvesRack_2C" parent="GameElements" instance=ExtResource("5_yqjhx")]
+position = Vector2(494.5, 752)
+scale = Vector2(0.177734, 0.177734)
+
+[node name="LabelBoxes_2C" type="Label" parent="GameElements/ShelvesRack_2C"]
+offset_left = -165.978
+offset_right = 184.022
+offset_bottom = 189.0
+theme_override_colors/font_color = Color(0.592157, 0.686275, 0.815686, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 50
+theme_override_fonts/font = ExtResource("1_aunc4")
+theme_override_font_sizes/font_size = 150
+text = "0
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Truck_A" parent="GameElements" instance=ExtResource("7_sfxvd")]
+position = Vector2(105, 577)
+scale = Vector2(0.163086, 0.163086)
+
+[node name="LabelContentTruck_A" type="Label" parent="GameElements/Truck_A"]
+offset_left = -153.0
+offset_top = -159.0
+offset_right = 62.0
+offset_bottom = 117.0
+theme_override_colors/font_color = Color(0.92549, 0.223529, 0.4, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 50
+theme_override_fonts/font = ExtResource("1_aunc4")
+theme_override_font_sizes/font_size = 150
+text = "0
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Truck_B" parent="GameElements" instance=ExtResource("7_sfxvd")]
+position = Vector2(105, 824)
+scale = Vector2(0.163086, 0.163086)
+
+[node name="LabelContentTruck_B" type="Label" parent="GameElements/Truck_B"]
+offset_left = -178.0
+offset_top = -159.0
+offset_right = 80.0
+offset_bottom = 129.0
+theme_override_colors/font_color = Color(0.358563, 0.525204, 0.860223, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 50
+theme_override_fonts/font = ExtResource("1_aunc4")
+theme_override_font_sizes/font_size = 150
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1

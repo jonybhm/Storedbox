@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://chitg1aosygas"]
+
+[ext_resource type="Texture2D" uid="uid://bxq55tmods0k6" path="res://Sprites/camion-de-reparto.png" id="1_nwhf5"]
+
+[node name="Truck" type="Sprite2D"]
+texture = ExtResource("1_nwhf5")

@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://bu2f88aqro5yh"]
+
+[ext_resource type="AudioStream" uid="uid://toygdfd3tebl" path="res://Music/GlobalMusic.mp3" id="1_mybhw"]
+[ext_resource type="Script" path="res://Scripts/AudioStreamPlayer.gd" id="2_vai55"]
+
+[node name="GlobalMusic" type="AudioStreamPlayer"]
+stream = ExtResource("1_mybhw")
+autoplay = true
+script = ExtResource("2_vai55")

@@ -1,0 +1,75 @@
+[gd_scene load_steps=3 format=3 uid="uid://cufrtlkhaod4x"]
+
+[ext_resource type="FontFile" uid="uid://cy04exvuwceek" path="res://Fonts/ArsenalSC-Regular.ttf" id="1_gxgsb"]
+[ext_resource type="Script" path="res://Scripts/LevelsMenu/LevelsButtons.gd" id="2_h0kne"]
+
+[node name="LevelsMenu" type="Node2D"]
+
+[node name="Background" type="Node2D" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="Background"]
+offset_right = 576.0
+offset_bottom = 1024.0
+color = Color(0.951515, 0.897582, 0.949652, 1)
+
+[node name="UI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="Title" type="Label" parent="UI"]
+layout_mode = 0
+offset_right = 576.0
+offset_bottom = 76.0
+theme_override_colors/font_color = Color(0.364706, 0.286275, 0.431373, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("1_gxgsb")
+theme_override_font_sizes/font_size = 70
+text = "El Camionero José"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LevelsButtons" type="Control" parent="UI"]
+layout_mode = 3
+anchors_preset = 0
+offset_top = 300.0
+offset_bottom = 300.0
+script = ExtResource("2_h0kne")
+
+[node name="LevelsMenuBox" type="VBoxContainer" parent="UI/LevelsButtons"]
+layout_mode = 0
+offset_right = 576.0
+offset_bottom = 260.0
+
+[node name="TutorialButton" type="Button" parent="UI/LevelsButtons/LevelsMenuBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.344359, 0.263388, 0.413618, 1)
+theme_override_fonts/font = ExtResource("1_gxgsb")
+theme_override_font_sizes/font_size = 60
+text = "Tutorial"
+flat = true
+
+[node name="Level1Button" type="Button" parent="UI/LevelsButtons/LevelsMenuBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.344359, 0.263388, 0.413618, 1)
+theme_override_fonts/font = ExtResource("1_gxgsb")
+theme_override_font_sizes/font_size = 60
+text = "Nivel 1"
+flat = true
+
+[node name="Level2Button" type="Button" parent="UI/LevelsButtons/LevelsMenuBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.344359, 0.263388, 0.413618, 1)
+theme_override_fonts/font = ExtResource("1_gxgsb")
+theme_override_font_sizes/font_size = 60
+text = "Nivel 2"
+flat = true
+
+[node name="BackButton" type="Button" parent="UI/LevelsButtons/LevelsMenuBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.344359, 0.263388, 0.413618, 1)
+theme_override_fonts/font = ExtResource("1_gxgsb")
+theme_override_font_sizes/font_size = 60
+text = "Volver"
+flat = true

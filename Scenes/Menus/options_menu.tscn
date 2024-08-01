@@ -1,0 +1,73 @@
+[gd_scene load_steps=5 format=3 uid="uid://ddmqcewxs0k8e"]
+
+[ext_resource type="Texture2D" uid="uid://c0uhf1s6roetn" path="res://Sprites/secretaria.png" id="1_44c06"]
+[ext_resource type="FontFile" uid="uid://cy04exvuwceek" path="res://Fonts/ArsenalSC-Regular.ttf" id="1_y7p0a"]
+[ext_resource type="Script" path="res://Scripts/OptionsMenu/OptionsButtons.gd" id="2_i84yh"]
+[ext_resource type="Texture2D" uid="uid://ctb1qq425rqid" path="res://Sprites/flecha.png" id="3_013e5"]
+
+[node name="OptionsMenu" type="Node2D"]
+
+[node name="Background" type="Node2D" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="Background"]
+offset_right = 576.0
+offset_bottom = 1024.0
+color = Color(0.951515, 0.897582, 0.949652, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="Background"]
+position = Vector2(248, 768)
+texture = ExtResource("1_44c06")
+
+[node name="UI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="Title" type="Label" parent="UI"]
+layout_mode = 0
+offset_right = 576.0
+offset_bottom = 76.0
+theme_override_colors/font_color = Color(0.364706, 0.286275, 0.431373, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("1_y7p0a")
+theme_override_font_sizes/font_size = 70
+text = "El Camionero José"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="OptionsButtons" type="Control" parent="UI"]
+layout_mode = 3
+anchors_preset = 0
+offset_top = 300.0
+offset_bottom = 300.0
+script = ExtResource("2_i84yh")
+
+[node name="OptionsMenuBox" type="VBoxContainer" parent="UI/OptionsButtons"]
+layout_mode = 0
+offset_right = 576.0
+offset_bottom = 260.0
+
+[node name="MusicButton" type="Button" parent="UI/OptionsButtons/OptionsMenuBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.344359, 0.263388, 0.413618, 1)
+theme_override_fonts/font = ExtResource("1_y7p0a")
+theme_override_font_sizes/font_size = 60
+text = "Música"
+icon = ExtResource("3_013e5")
+flat = true
+alignment = 2
+icon_alignment = 2
+expand_icon = true
+
+[node name="BackButton" type="Button" parent="UI/OptionsButtons/OptionsMenuBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.344359, 0.263388, 0.413618, 1)
+theme_override_fonts/font = ExtResource("1_y7p0a")
+theme_override_font_sizes/font_size = 60
+text = "Volver"
+icon = ExtResource("3_013e5")
+flat = true
+alignment = 2
+icon_alignment = 2
+expand_icon = true

@@ -1,0 +1,88 @@
+[gd_scene load_steps=7 format=3 uid="uid://ctblrwgycnpdv"]
+
+[ext_resource type="Texture2D" uid="uid://cccvs26wv1yu6" path="res://Sprites/camionero.png" id="1_88jl4"]
+[ext_resource type="FontFile" uid="uid://cy04exvuwceek" path="res://Fonts/ArsenalSC-Regular.ttf" id="1_iyesd"]
+[ext_resource type="Script" path="res://Scripts/MainMenu/MenuButtons.gd" id="2_38jfq"]
+[ext_resource type="Texture2D" uid="uid://d0rdh65ar0e4k" path="res://Sprites/flecha(1).png" id="3_lummi"]
+[ext_resource type="Texture2D" uid="uid://d0ohogrey0pnm" path="res://Sprites/facil-instalacion.png" id="4_lh7m3"]
+[ext_resource type="Texture2D" uid="uid://cabajrq4tsqp2" path="res://Sprites/cruzar.png" id="5_p2wjj"]
+
+[node name="MainMenu" type="Node2D"]
+
+[node name="Background" type="Node2D" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="Background"]
+offset_right = 576.0
+offset_bottom = 1024.0
+color = Color(0.951515, 0.897582, 0.949652, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="Background"]
+position = Vector2(174, 767)
+texture = ExtResource("1_88jl4")
+
+[node name="UI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="Title" type="Label" parent="UI"]
+layout_mode = 0
+offset_right = 576.0
+offset_bottom = 76.0
+theme_override_colors/font_color = Color(0.364706, 0.286275, 0.431373, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("1_iyesd")
+theme_override_font_sizes/font_size = 70
+text = "El Camionero José"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MenuButtons" type="Control" parent="UI"]
+layout_mode = 3
+anchors_preset = 0
+offset_top = 300.0
+offset_bottom = 300.0
+script = ExtResource("2_38jfq")
+
+[node name="MainMenuBox" type="VBoxContainer" parent="UI/MenuButtons"]
+clip_contents = true
+layout_mode = 0
+offset_right = 576.0
+offset_bottom = 260.0
+
+[node name="PlayButton" type="Button" parent="UI/MenuButtons/MainMenuBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.344359, 0.263388, 0.413618, 1)
+theme_override_fonts/font = ExtResource("1_iyesd")
+theme_override_font_sizes/font_size = 60
+text = "Jugar"
+icon = ExtResource("3_lummi")
+flat = true
+alignment = 2
+icon_alignment = 2
+expand_icon = true
+
+[node name="OptionsButton" type="Button" parent="UI/MenuButtons/MainMenuBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.344359, 0.263388, 0.413618, 1)
+theme_override_fonts/font = ExtResource("1_iyesd")
+theme_override_font_sizes/font_size = 60
+text = "Opciones"
+icon = ExtResource("4_lh7m3")
+flat = true
+alignment = 2
+icon_alignment = 2
+expand_icon = true
+
+[node name="QuitButton" type="Button" parent="UI/MenuButtons/MainMenuBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.344359, 0.263388, 0.413618, 1)
+theme_override_fonts/font = ExtResource("1_iyesd")
+theme_override_font_sizes/font_size = 60
+text = "Salir"
+icon = ExtResource("5_p2wjj")
+flat = true
+alignment = 2
+icon_alignment = 2
+expand_icon = true
