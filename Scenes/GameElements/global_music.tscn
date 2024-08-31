@@ -5,5 +5,6 @@
 
 [node name="GlobalMusic" type="AudioStreamPlayer"]
 stream = ExtResource("1_mybhw")
-autoplay = true
 script = ExtResource("2_vai55")
+
+[connection signal="finished" from="." to="." method="_on_finished"]

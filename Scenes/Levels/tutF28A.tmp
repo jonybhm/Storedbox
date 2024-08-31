@@ -91,7 +91,6 @@ flat = true
 expand_icon = true
 
 [node name="PlayButton" type="Button" parent="UI/TutorialButtons"]
-layout_mode = 0
 offset_left = 492.0
 offset_top = 884.0
 offset_right = 542.0

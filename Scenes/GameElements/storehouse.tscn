@@ -1,8 +1,63 @@
-[gd_scene load_steps=3 format=3 uid="uid://cw3pmr8q5g46h"]
+[gd_scene load_steps=5 format=3 uid="uid://cw3pmr8q5g46h"]
 
 [ext_resource type="Texture2D" uid="uid://omiruwg0nl4f" path="res://Sprites/almacen.png" id="1_e2qf5"]
+[ext_resource type="FontFile" uid="uid://cy04exvuwceek" path="res://Fonts/ArsenalSC-Regular.ttf" id="2_c1ym3"]
 [ext_resource type="Script" path="res://Scripts/GameElements/storehouse.gd" id="2_pvr36"]
 
-[node name="Storehouse" type="Sprite2D"]
-texture = ExtResource("1_e2qf5")
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ac7dx"]
+size = Vector2(148.537, 149.099)
+
+[node name="Storehouse" type="Node2D"]
 script = ExtResource("2_pvr36")
+
+[node name="ColorRect_store" type="ColorRect" parent="."]
+offset_left = -289.0
+offset_top = -277.0
+offset_right = 289.0
+offset_bottom = 2681.0
+color = Color(0.504457, 0.93934, 0.656398, 1)
+
+[node name="Area2D" type="Area2D" parent="." groups=["shelves_1A"]]
+position = Vector2(1.52588e-05, 0)
+scale = Vector2(0.177734, 0.177734)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-0.000183105, -0.000244141)
+scale = Vector2(20, 20)
+shape = SubResource("RectangleShape2D_ac7dx")
+one_way_collision_margin = 0.0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_e2qf5")
+
+[node name="label_name_storehouse" type="Label" parent="."]
+offset_left = -247.0
+offset_top = -577.0
+offset_right = 258.0
+offset_bottom = -426.0
+theme_override_colors/font_color = Color(0.345459, 0.766225, 0.503299, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 30
+theme_override_fonts/font = ExtResource("2_c1ym3")
+theme_override_font_sizes/font_size = 120
+text = "Depósito 1
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="label_capacity" type="Label" parent="."]
+offset_left = -129.0
+offset_top = -437.0
+offset_right = 186.0
+offset_bottom = -286.0
+theme_override_colors/font_color = Color(0.345459, 0.766225, 0.503299, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 30
+theme_override_fonts/font = ExtResource("2_c1ym3")
+theme_override_font_sizes/font_size = 120
+text = "(0/30)
+"
+horizontal_alignment = 1
+vertical_alignment = 1

@@ -1,6 +1,41 @@
-[gd_scene load_steps=2 format=3 uid="uid://chitg1aosygas"]
+[gd_scene load_steps=5 format=3 uid="uid://chitg1aosygas"]
 
+[ext_resource type="Script" path="res://Scenes/GameElements/truck.gd" id="1_8iw0j"]
 [ext_resource type="Texture2D" uid="uid://bxq55tmods0k6" path="res://Sprites/camion-de-reparto.png" id="1_nwhf5"]
+[ext_resource type="FontFile" uid="uid://cy04exvuwceek" path="res://Fonts/ArsenalSC-Regular.ttf" id="2_kpuv3"]
 
-[node name="Truck" type="Sprite2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_05mo4"]
+size = Vector2(148.537, 95.0859)
+
+[node name="Truck" type="Node2D"]
+script = ExtResource("1_8iw0j")
+
+[node name="Area2D_1A" type="Area2D" parent="." groups=["shelves_1A"]]
+position = Vector2(1.52588e-05, 0)
+scale = Vector2(0.177734, 0.177734)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D_1A"]
+position = Vector2(-0.000183105, -0.000244141)
+scale = Vector2(20, 20)
+shape = SubResource("RectangleShape2D_05mo4")
+one_way_collision_margin = 0.0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_nwhf5")
+
+[node name="label_boxes_in_truck" type="Label" parent="."]
+offset_left = -232.0
+offset_top = -121.0
+offset_right = 118.0
+offset_bottom = 68.0
+theme_override_colors/font_color = Color(0.345459, 0.766225, 0.503299, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 50
+theme_override_fonts/font = ExtResource("2_kpuv3")
+theme_override_font_sizes/font_size = 150
+text = "0
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true

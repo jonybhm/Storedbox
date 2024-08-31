@@ -1,0 +1,68 @@
+{
+	"level_name":"tutorial",
+	"dict_storehouses_values":
+	{
+		"storehouse_1":{
+			"name_storage_1" : "1",
+			"color_storehouse_1" : "MEDIUM_AQUAMARINE",
+			"capacity_storage_1" : 30,
+			"current_storage_1" : 0
+		},
+		"storehouse_2":{
+			"name_storage_2" : "2",
+			"color_storehouse_2" : "LIGHT_PINK",
+			"capacity_storage_2" : 110,
+			"current_storage_2" : 0
+		},
+		"storehouse_3":{
+			"name_storage_3" : "3",
+			"color_storehouse_3" : "POWDER_BLUE",
+			"capacity_storage_3" : 80,
+			"current_storage_3" : 0
+		}
+	},
+	"dict_factories_values":
+	{
+		"factory_A":{
+			"name_factory_A" : "A",
+			"color_factory_A" : "CRIMSON",
+			"production_factory_A" : 130,
+			"current_factory_A" : 130,
+			"current_truck_A" : 0
+		},
+		"factory_B":{
+			"name_factory_B" : "B",
+			"color_factory_B" : "DARK_SLATE_BLUE",
+			"production_factory_B" : 90,
+			"current_factory_B" : 90,
+			"current_truck_B" : 0
+		}
+	},
+	"dict_shelves_values":
+	{
+		"shelve_1A":{
+			"current_shelves_1A" : 0,
+			"value_shelves_1A" : 2
+		},
+		"shelve_2A":{
+			"current_shelves_2A" : 0,
+			"value_shelves_2A" : 5
+		},
+		"shelve_3A":{
+			"current_shelves_3A" : 0,
+			"value_shelves_3A" : 7
+		},
+		"shelve_1B":{
+			"current_shelves_1B" : 0,
+			"value_shelves_1B" : 3
+		},
+		"shelve_2B":{
+			"current_shelves_2B" : 0,
+			"value_shelves_2B" : 2
+		},
+		"shelve_3B":{
+			"current_shelves_3B" : 0,
+			"value_shelves_3B" : 8
+		}
+	}
+}

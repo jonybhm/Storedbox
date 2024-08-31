@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://drgexlcpv55d6"]
+[gd_scene load_steps=10 format=3 uid="uid://drgexlcpv55d6"]
 
 [ext_resource type="Script" path="res://Scripts/Levels/tutorial.gd" id="1_7xikj"]
 [ext_resource type="FontFile" uid="uid://cy04exvuwceek" path="res://Fonts/ArsenalSC-Regular.ttf" id="1_aunc4"]
@@ -8,7 +8,6 @@
 [ext_resource type="Texture2D" uid="uid://ctb1qq425rqid" path="res://Sprites/flecha.png" id="4_2bfu3"]
 [ext_resource type="PackedScene" uid="uid://cw3pmr8q5g46h" path="res://Scenes/GameElements/storehouse.tscn" id="4_6u3fw"]
 [ext_resource type="PackedScene" uid="uid://du5eo6opgry3p" path="res://Scenes/GameElements/shelves_rack.tscn" id="5_yqjhx"]
-[ext_resource type="Texture2D" uid="uid://dbkslmj6gk2k3" path="res://Sprites/cheque.png" id="6_tk20t"]
 [ext_resource type="PackedScene" uid="uid://chitg1aosygas" path="res://Scenes/GameElements/truck.tscn" id="7_sfxvd"]
 
 [node name="Tutorial" type="Node2D" node_paths=PackedStringArray("factory_A", "factory_B", "truck_A", "truck_B", "storehouse_1", "storehouse_2", "storehouse_3", "shelves_1A", "shelves_2A", "shelves_3A", "shelves_1B", "shelves_2B", "shelves_3B")]
@@ -87,19 +86,6 @@ theme_override_colors/font_color = Color(0.344359, 0.263388, 0.413618, 1)
 theme_override_fonts/font = ExtResource("1_aunc4")
 theme_override_font_sizes/font_size = 60
 icon = ExtResource("4_2bfu3")
-flat = true
-expand_icon = true
-
-[node name="PlayButton" type="Button" parent="UI/TutorialButtons"]
-layout_mode = 0
-offset_left = 492.0
-offset_top = 884.0
-offset_right = 542.0
-offset_bottom = 934.0
-theme_override_colors/font_color = Color(0.344359, 0.263388, 0.413618, 1)
-theme_override_fonts/font = ExtResource("1_aunc4")
-theme_override_font_sizes/font_size = 60
-icon = ExtResource("6_tk20t")
 flat = true
 expand_icon = true
 
