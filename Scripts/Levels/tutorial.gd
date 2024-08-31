@@ -170,6 +170,7 @@ func _on_PlayButton_pressed():
 	else:
 		print("costo total = " + str(calculate_total_cost(shelves)))
 		show_values(shelves)
+		
 
 func calculate_total_cost(shelves):
 	var total_cost := 0
